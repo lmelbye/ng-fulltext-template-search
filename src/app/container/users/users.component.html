@@ -1,0 +1,25 @@
+<div class="search-box searchable">
+	<h4>Users</h4>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">First</th>
+				<th scope="col">Last</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let user of (users$ | async)">
+				<th scope="row">{{user.id}}</th>
+				<td>{{user.name}}</td>
+				<td>{{user.lastname}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<form>
+		<div class="form-group">
+			<!-- After add new user you should resetSearchOnNextInput = true -->
+			<button class="btn btn-primary" type="button" (click)="this.searchService.resetSearchOnNextInput = true">Add user</button>
+		</div>
+	</form>
+</div>

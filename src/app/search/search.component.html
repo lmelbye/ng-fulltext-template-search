@@ -1,0 +1,11 @@
+<ng-container *ngIf="loadSearchAbleElement else minSearch">
+	<search-generel></search-generel>
+	<search-inventory></search-inventory>
+	<search-users></search-users>
+</ng-container>
+
+<ng-template #minSearch>
+    <p class="text-center" *ngIf="search$ && search$ | async">
+        <i>Type at least {{minSearchLen}} charaters to start searching</i>
+    </p>
+</ng-template>

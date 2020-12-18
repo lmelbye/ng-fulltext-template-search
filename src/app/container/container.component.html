@@ -1,0 +1,30 @@
+<div class="container">
+	<h1>Anagular template search example</h1>
+	<form>
+		<label>Search contents</label>
+		<div class="form-group">
+			<input name="search" focus type="search" [ngModel]="search$.value" (ngModelChange)="search$.next($event)" class="form-control" placeholder="Search html content: E.g. kennedy">
+		</div>
+	</form>
+	<search-search [search$]="search$"></search-search>
+
+	<ng-container *ngIf="!search$.value">
+		<ul class="nav nav-pills">
+			<li class="nav-item">
+				<a class="nav-link" [class.active]="tab == 'generel'" href="#" aria-current="page" (click)="tab = 'generel'">Generel</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" [class.active]="tab == 'users'" href="#" (click)="tab = 'users'">Users</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" [class.active]="tab == 'inventory'" href="#" (click)="tab = 'inventory'">Inventory</a>
+			</li>
+		</ul>
+		<div class="mt-1 tab-content">
+			<search-generel *ngIf="tab == 'generel'"></search-generel>
+			<search-inventory *ngIf="tab == 'inventory'"></search-inventory>
+			<search-users *ngIf="tab == 'users'"></search-users>
+		</div>
+	</ng-container>
+
+</div>

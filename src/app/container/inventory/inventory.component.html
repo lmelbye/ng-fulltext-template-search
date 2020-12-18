@@ -1,0 +1,35 @@
+<div class="search-box searchable">
+	<h4>Inventory</h4>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Product</th>
+				<th scope="col">Color</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">1</th>
+				<td>Shoe</td>
+				<td>Red</td>
+			</tr>
+			<tr>
+				<th scope="row">2</th>
+				<td>Goat</td>
+				<td>Grey</td>
+			</tr>
+			<tr>
+				<th scope="row">3</th>
+				<td>Bugatti Chiron</td>
+				<td>Black/yellow</td>
+			</tr>
+		</tbody>
+	</table>
+	<form>
+		<div class="form-group">
+			<!-- After add new user you should resetSearchOnNextInput = true -->
+			<button class="btn btn-primary" type="button" (click)="searchService.resetSearchOnNextInput = true">Add product</button>
+		</div>
+	</form>
+</div>
